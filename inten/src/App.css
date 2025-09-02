@@ -1,0 +1,217 @@
+/* los align, son para justificar para que lado estara el objeto o texto*/
+/* los display, establece si un elemento se trata como un bloque o un elemento en línea y el diseño utilizado para sus elementos hijos*/
+/* los min y max height es para forzar la altura maxima y minima*/
+/* el overflow es para definir cuando se recorta algo si se coloca una barra o no*/
+/* el position es para definir la posicion*/
+
+/* los css para navbar estan si se quiere setear uno, igual esta presente el .js correspondiente*/
+
+
+.App {
+  text-align: center;
+  display: absolute;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
+  max-height: 95px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+#pie{
+  text-align: center;
+  min-height: 5vh;
+  max-height: 5px;
+  width: 100%;
+}
+
+#modals{
+  margin: 10px 50px;
+  display: sticky;
+  position: relative;
+}
+.leaflet-container{
+  display: relative;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  max-height: 95vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,p,.navbar,.brand,a,.td-name,td,button,input,select,textarea{
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Montserrat", "Helvetica", Arial, sans-serif;
+  font-weight: 300;
+}
+
+
+
+.navbar .navbar-brand {
+  font-weight: 600;
+  margin: 5px 0px;
+  padding: 20px 15px;
+  font-size: 14px;
+  color: #66615b;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+
+.page-header {
+  background-color: #b2afab;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: 999px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-header .filter::after {
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+
+.page-header .content-center,
+.page-header .category-absolute {
+  z-index: 1;
+}
+
+#hola{
+  z-index: 7900;
+  top: 38em;
+  position: absolute;
+  align-items: center;
+}
+
+.presentation-title {
+  font-size: 5.0em;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  background: #fbf8ec;
+  background: -moz-linear-gradient(top, #ffffff 35%, #4e6773 100%);
+  background: -webkit-linear-gradient(top, #ffffff 35%, #4e6773 100%);
+  background: -ms-linear-gradient(top, #ffffff 35%, #4e6773 100%);
+  background: linear-gradient(to bottom, #ffffff 35%, #4e6773 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.presentation-subtitle {
+  font-size: 1.7em;
+  color: #ffffff;
+}
+
+.category-absolute {
+  position: absolute;
+  text-align: center;
+  top: 100vh;
+  margin-top: -60px;
+  padding: 0 15px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.fog-low {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: -35%;
+  margin-bottom: -50px;
+  width: 110%;
+  opacity: 0.85;
+}
+.fog-low img {
+  width: 100%;
+}
+.fog-low.right {
+  margin-left: 30%;
+  opacity: 1;
+}
+
+.page-header .content-center {
+  margin-top: 85px;
+}
+
+/* z-index sirve para superponer objetos, entre mayo el valor, esta sobre los z-index menores */
+/* animation sirve para animar, se define cloudLoop como una traslacion del eje x por 80s */
+.moving-clouds {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 250.625em;
+  height: 43.75em;
+  animation: cloudLoop 80s linear infinite;
+
+}
+
+@keyframes cloudLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* funcion para reescalar los tamaños de los diferentes titulos y divs para pantallas pequeñas (responsivo) (aun falta el boton empezar) */
+@media (max-width: 767px) {
+  .register .page-header {
+    max-height: fit-content;
+  }
+  body {
+    position: relative;
+    font-size: 12px;
+  }
+  h6 {
+    font-size: 1em;
+  }
+  .navbar .container {
+    left: 0;
+    width: 100%;
+    -webkit-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -moz-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -o-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    position: relative;
+  }
+  .presentation-page .title-brand .type {
+    font-size: 16px;
+    transform: translateY(-28px);
+    -webkit-transform: translateY(-28px);
+    -moz-transform: translateY(-28px);
+    -o-transform: translateY(-28px);
+  }
+  .presentation-page .section-components {
+    overflow: hidden;
+  }
+}
+
+
+
+
+
