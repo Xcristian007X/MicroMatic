@@ -1,4 +1,4 @@
-# Micromatic
+# MicroMatic
 
 La problemática actual es acerca del tiempo el cual tarda en llegar el transporte 
 público a cada paradero en la ciudad de Temuco, por el cual el objetivo será 
