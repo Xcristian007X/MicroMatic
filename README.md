@@ -20,7 +20,9 @@ las estadísticas generales de la aplicación.
 ## Autores
 
 **Cristian Angulo-Gonzalez**
+
 **Claudio Araya-Toro**
+
 **Diego Castro-Cifuentes**
 
 ## Modo de uso
