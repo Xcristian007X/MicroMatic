@@ -1,6 +1,2 @@
 pymongo==4.10.1
 requests
-json
-threading
-time
-os
