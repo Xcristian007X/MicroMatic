@@ -17,6 +17,8 @@ las posiciones, rutas, entre otros. Y por último Python que usaremos como API r
 usando Flask y para hacer los cálculos pertinentes a las posiciones de los vehículos y 
 las estadísticas generales de la aplicación.
 
+Pagina en render: https://node-app-9zv0.onrender.com/
+
 ## Autores
 
 **Cristian Angulo-Gonzalez**
@@ -30,5 +32,6 @@ las estadísticas generales de la aplicación.
 - Importar archivos XX_ida.json e XX_regreso.json en la bd de mongo servicio/rutas que estan en "inten/src".
 
 - Iniciar app.py y simulador.py que estan en "Backend" (previamente instalando las librerias de flask e requests).
+
 
 - Iniciar node.js con "npm install" (si es primera vez) e "npm init" en la carpeta "inten".
