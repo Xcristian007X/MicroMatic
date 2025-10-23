@@ -15,7 +15,9 @@ import {
   FormGroup
 } from "reactstrap";
 
-const baseURL = "http://127.0.0.1:5000/rutas";
+const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:5000";
+const baseURL = `${API_URL}/rutas`;
+
 
 // core components
 // se importa modal para hacer una ventana desplegable y se define su estado para poder sacarlo o incluirlo dentro de la pagina web
@@ -58,7 +60,7 @@ function SectionJavaScript() {
 
   React.useEffect(() => { // useEffect hook
     setTimeout(() => { // simulate a delay
-      axios.get("http://127.0.0.1:5000/micro/" + rutaS)
+      axios.get(`${API_URL}/micro/${rutaS}`)
         .then((response) => {
           //set state
           dispatch(setPost2({
@@ -69,7 +71,7 @@ function SectionJavaScript() {
   });
 
   React.useEffect(() => { // useEffect hook
-    axios.get("http://127.0.0.1:5000/rutas/"+rutaS)
+    axios.get(`${API_URL}/rutas/${rutaS}`)
     .then((response) => {
         //set state
         dispatch(setPost3({
@@ -79,7 +81,8 @@ function SectionJavaScript() {
     },[dispatch, rutaS]);
 
     React.useEffect(() => {
-      axios.get("http://127.0.0.1:5000/micro").then((response) => {
+      axios.get(`${API_URL}/micro`)
+      .then((response) => {
         dispatch(setPost4({
           post4: response.data
         }))
