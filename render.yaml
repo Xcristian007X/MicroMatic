@@ -1,0 +1,40 @@
+services:
+  # 🌐 Servicio web principal con Node.js
+  - type: web
+    name: node-app
+    env: node
+    plan: free
+    rootDir: inten
+    buildCommand: npm install
+    startCommand: node src/app.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: FLASK_API_URL
+        value: https://flask-api.onrender.com
+
+  # 🔥 API Flask
+  - type: web
+    name: flask-api
+    env: python
+    plan: free
+    rootDir: Backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app -w 2 -b 0.0.0.0:5000
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+
+  # ⚙️ Simulador (proceso background)
+  - type: worker
+    name: simulador
+    env: python
+    plan: free
+    rootDir: Simulador
+    buildCommand: pip install -r requirements.txt
+    startCommand: python simulador.py
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: FLASK_API_URL
+        value: https://flask-api.onrender.com

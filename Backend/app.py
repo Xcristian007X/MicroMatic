@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_pymongo import MongoClient
 from flask_cors import CORS
+import os
 
-
+MONGODB_URI = os.environ.get("MONGODB_URI")
 app = Flask(__name__)
-myclient = MongoClient("mongodb://localhost:27017/")
+myclient = MongoClient(MONGODB_URI)
 mydb  = myclient["servicio"]
 mycol = mydb["microbuses"]
 myrut = mydb['rutas']
@@ -78,5 +79,6 @@ def deleteRutas():
 
 CORS(app,resources={r"/*":{"origins":"*"}})
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
 
