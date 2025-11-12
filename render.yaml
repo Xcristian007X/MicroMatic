@@ -1,5 +1,5 @@
 services:
-  # 🌐 Servicio web principal con Node.js
+  # Servicio web principal con Node.js
   - type: web
     name: node-app
     env: node
@@ -13,7 +13,7 @@ services:
       - key: FLASK_API_URL
         value: https://flask-api.onrender.com
 
-  # 🔥 API Flask
+  # API Flask
   - type: web
     name: flask-api
     env: python
@@ -25,7 +25,7 @@ services:
       - key: MONGODB_URI
         sync: false
 
-  # ⚙️ Simulador (proceso background)
+  # Simulador
   - type: worker
     name: simulador
     env: python

@@ -94,33 +94,58 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,p,.navbar,.brand,a,.td-name,td,button,
   z-index: 1;
 }
 
-#hola{
-  z-index: 7900;
-  top: 38em;
+#hola {
   position: absolute;
-  align-items: center;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 7900;
+  display: flex;
+  justify-content: center;
 }
 
+#hola button {
+  font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+  padding: clamp(0.5rem, 1vw, 0.8rem) clamp(1.5rem, 2vw, 2.2rem);
+  border-radius: 8px;
+}
+
+/* Ajuste en pantallas más pequeñas */
+@media (max-width: 767px) {
+  #hola {
+    bottom: 25%;
+  }
+}
+
+/* ---------- TITULO PRINCIPAL ---------- */
 .presentation-title {
-  font-size: 5.0em;
   font-weight: 700;
   margin: 0;
   color: #ffffff;
-  background: #fbf8ec;
-  background: -moz-linear-gradient(top, #ffffff 35%, #4e6773 100%);
   background: -webkit-linear-gradient(top, #ffffff 35%, #4e6773 100%);
-  background: -ms-linear-gradient(top, #ffffff 35%, #4e6773 100%);
-  background: linear-gradient(to bottom, #ffffff 35%, #4e6773 100%);
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  /* Escala mucho mejor */
+  font-size: clamp(1.8rem, 10vw, 5rem);
+  line-height: 1.1;
+  text-align: center;
+
+  /* Hace que ocupe todo el ancho visible */
+  width: 100%;
+  word-wrap: break-word;
 }
 
-
-
+/* ---------- SUBTITULO ---------- */
 .presentation-subtitle {
-  font-size: 1.7em;
+  font-size: clamp(1rem, 4vw, 1.8rem);
   color: #ffffff;
+  text-align: center;
+  margin-top: 1rem;
+  width: 100%;
 }
+
+
 
 .category-absolute {
   position: absolute;
@@ -211,6 +236,38 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6,p,.navbar,.brand,a,.td-name,td,button,
   }
 }
 
+/* Hace que el navbar flote dentro del header */
+.header-navbar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* más alto que el filtro oscuro */
+}
+
+/* Opcional: hace que el navbar sea transparente */
+.navbar {
+  background: transparent !important;
+  border: none;
+}
+
+/* Fondo gris oscuro para el menú desplegable */
+.navbar-collapse {
+  background-color: #2b2b2b !important; /* gris oscuro */
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Los links dentro del menú */
+.navbar-collapse .nav-link {
+  color: #f8f9fa !important; /* blanco */
+  transition: color 0.2s ease-in-out;
+}
+
+/* Cambia el color al pasar el mouse */
+.navbar-collapse .nav-link:hover {
+  color: #cfcfcf !important;
+}
 
 
 
