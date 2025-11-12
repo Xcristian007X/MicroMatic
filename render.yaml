@@ -25,16 +25,3 @@ services:
       - key: MONGODB_URI
         sync: false
 
-  # Simulador
-  - type: worker
-    name: simulador
-    env: python
-    plan: free
-    rootDir: Simulador
-    buildCommand: pip install -r requirements.txt
-    startCommand: python simulador.py
-    envVars:
-      - key: MONGODB_URI
-        sync: false
-      - key: FLASK_API_URL
-        value: https://flask-api.onrender.com
